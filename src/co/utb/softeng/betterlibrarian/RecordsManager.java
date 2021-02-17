@@ -25,7 +25,7 @@ public class RecordsManager {
     }
     
     private void init() throws Exception{
-        records = new HashMap<String, Member>();
+        this.records = new HashMap<String, Member>();
         Scanner fileScanner = new Scanner(new File(filePath));
         while (fileScanner.hasNext()) {
             String[] line = fileScanner.nextLine().split(",");
