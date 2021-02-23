@@ -1,0 +1,24 @@
+{
+    "1": {
+        "id": "1",
+        "name": "William Caicedo",
+        "books": [
+            "Design Patterns in Java",
+            "Learning from Data"
+        ]
+    },
+    "2": {
+        "id": "2",
+        "name": "Gabriel Caicedo",
+        "books": [
+            "History of the World Cup"
+        ]
+    },
+    "3": {
+        "id": "3",
+        "name": "Juan Caicedo",
+        "books": [
+            "Videogames in the 80's"
+        ]
+    }
+}

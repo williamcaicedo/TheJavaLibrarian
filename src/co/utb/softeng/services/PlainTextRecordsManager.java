@@ -1,4 +1,4 @@
-package co.utb.softeng.betterlibrarian;
+package co.utb.softeng.services;
 
 import java.io.File;
 import java.util.Arrays;
@@ -6,21 +6,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import co.utb.softeng.utils.Member;
+import co.utb.softeng.entities.Member;
 
-public class RecordsManager {
+public class PlainTextRecordsManager implements RecordsManager {
 
     private String filePath;
     private Map<String, Member> records;
 
-    public RecordsManager(String filePath){
+    public PlainTextRecordsManager(String filePath) throws Exception {
         this.filePath = filePath;
-        try {
-            this.init();
-        }
-        catch (Exception e) {
-            System.err.println("Unable to initialize member records: " + e.toString());
-        }
+        this.init();
 
     }
     

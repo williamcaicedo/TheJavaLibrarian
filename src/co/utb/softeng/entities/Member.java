@@ -1,4 +1,4 @@
-package co.utb.softeng.utils;
+package co.utb.softeng.entities;
 
 import java.util.List;
 
@@ -7,6 +7,8 @@ public class Member {
     private String id;
     private String name;
     private List<String> books;
+
+    public Member(){}
 
     public Member(String id, String name, List<String> books) {
         this.id = id;
