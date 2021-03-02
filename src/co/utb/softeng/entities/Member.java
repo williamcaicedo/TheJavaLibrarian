@@ -1,26 +1,27 @@
 package co.utb.softeng.entities;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Member {
 
-    private String id;
+    private Long id;
     private String name;
-    private List<String> books;
+    private List<Book> books;
 
     public Member(){}
 
-    public Member(String id, String name, List<String> books) {
+    public Member(Long id, String name, List<Book> books) {
         this.id = id;
         this.name = name;
         this.books = books;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -32,16 +33,17 @@ public class Member {
         this.name = name;
     }
 
-    public List<String> getBooks() {
+    public List<Book> getBooks() {
         return books;
     }
 
-    public void setBooks(List<String> books) {
+    public void setBooks(List<Book> books) {
         this.books = books;
     }
 
     public String toString() {
-        return this.id + "," + this.name + "," + "[" + String.join(",", this.books) + "]";
+        List<String> bookTitles = this.books.stream().map(b -> b.getTitle()).collect(Collectors.toList());
+        return this.id + "," + this.name + "," + "[" + String.join(",", bookTitles) + "]";
     }
 
     

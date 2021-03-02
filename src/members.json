@@ -3,22 +3,34 @@
         "id": "1",
         "name": "William Caicedo",
         "books": [
-            "Design Patterns in Java",
-            "Learning from Data"
+            {
+                "id": "1",
+                "title": "Design Patterns in Java"
+            },
+            {
+                "id": "2",
+                "title": "Learning from Data"
+            }
         ]
     },
     "2": {
         "id": "2",
         "name": "Gabriel Caicedo",
         "books": [
-            "History of the World Cup"
+            {
+                "id": "3",
+                "title": "History of the World Cup"
+            }
         ]
     },
     "3": {
         "id": "3",
         "name": "Juan Caicedo",
         "books": [
-            "Videogames in the 80's"
+            {
+                "id": "4",
+                "title": "Videogames in the 80's"
+            }
         ]
     }
 }

@@ -4,16 +4,19 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 import co.utb.softeng.entities.Member;
-import co.utb.softeng.services.RecordsManager;
+import co.utb.softeng.services.BookService;
+import co.utb.softeng.services.MemberService;
 
 
 
 public class Librarian {
 
-    private RecordsManager recordsManager;
+    private MemberService memberService;
+    private BookService bookService;
 
-    public Librarian(RecordsManager recordsManager) {
-        this.recordsManager = recordsManager;
+    public Librarian(MemberService memberService, BookService bookService) {
+        this.memberService = memberService;
+        this.bookService = bookService;
     }
 
     public void run() throws Exception{
@@ -23,7 +26,7 @@ public class Librarian {
         System.out.println("Hey, I'm the librarian, what's your ID number?");
         String id = reader.readLine();
         //Consultar la información del miembro solicitada
-        Member member = this.recordsManager.getMember(id);
+        Member member = this.memberService.getMember(Long.parseLong(id));
         //Mostrar la información
         if (member != null) {
             System.out.println("Your ID is:" + member.getId());
