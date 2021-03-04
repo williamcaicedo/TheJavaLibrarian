@@ -1,5 +1,6 @@
 package co.utb.softeng.dataaccess;
 
+import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -39,7 +40,7 @@ public class BookDaoImpl implements BookDao {
     public Book saveBook(Book book) {
         this.books.put(book.getId(), book);
         try {
-            this.mapper.writeValueAsString(this.books);
+            this.mapper.writeValue(new File(this.filePath), this.books);
 
         } catch (Exception e) {
             System.out.println(e.toString());

@@ -1,5 +1,6 @@
 package co.utb.softeng.dataaccess;
 
+import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -39,7 +40,7 @@ public class MemberDaoImpl implements MemberDao {
     public Member saveMember(Member member) {
         this.members.put(member.getId(), member);
         try {
-            this.mapper.writeValueAsString(this.members);
+            this.mapper.writeValue(new File(this.filePath), this.members);
 
         } catch (Exception e) {
             System.out.println(e.toString());
